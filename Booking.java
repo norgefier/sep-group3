@@ -40,7 +40,7 @@ public class Booking {
 	public void setCheckInDate(String date, String time) throws ParseException
 	{
 		java.util.Calendar cal = java.util.Calendar.getInstance();
-		String dateTimeString = new java.text.SimpleDateFormat("EEEE, "+date+time).format(cal.getTime());
+		String dateTimeString = new java.text.SimpleDateFormat("EEEE, "+date+"/"+time).format(cal.getTime());
 		SimpleDateFormat formatter = new SimpleDateFormat("EEEE, dd/MM/yyyy/hh:mm:ss");
 		Date dateTime = formatter.parse(dateTimeString);
 		this.checkInTime = dateTime;
@@ -56,7 +56,7 @@ public class Booking {
 	public void setCheckOutDate(String date, String time) throws ParseException
 	{
 		java.util.Calendar cal = java.util.Calendar.getInstance();
-		String dateTimeString = new java.text.SimpleDateFormat("EEEE, "+date+time).format(cal.getTime());
+		String dateTimeString = new java.text.SimpleDateFormat("EEEE, "+date+"/"+time).format(cal.getTime());
 		SimpleDateFormat formatter = new SimpleDateFormat("EEEE, dd/MM/yyyy/hh:mm:ss");
 		Date dateTime = formatter.parse(dateTimeString);
 		this.checkOutTime = dateTime;

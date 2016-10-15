@@ -1,4 +1,7 @@
 package models;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Flight {
@@ -6,7 +9,7 @@ public class Flight {
 	private UUID flightID;
 	private String flightNo;
 	private String airline;
-	private Date depdate;
+	private Date depDate;
 	private String depLoc;
 	private Date arrDate;
 	private String arrLoc;
@@ -48,13 +51,20 @@ public class Flight {
 	}
 
 
-	public Date getDepdate() {
-		return depdate;
+	public String getDepDate() {
+		String dateTime;
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm a zzz");
+		dateTime = dateFormat.format(depDate);
+		return dateTime;
 	}
 
 
-	public void setDepdate(Date depdate) {
-		this.depdate = depdate;
+	public void setDepDate(String date, String time) throws ParseException {
+		java.util.Calendar cal = java.util.Calendar.getInstance();
+		String dateTimeString = new java.text.SimpleDateFormat("EEEE, "+date+"/"+time).format(cal.getTime());
+		SimpleDateFormat formatter = new SimpleDateFormat("EEEE, dd/MM/yyyy/hh:mm:ss");
+		Date dateTime = formatter.parse(dateTimeString);
+		this.depDate = dateTime;
 	}
 
 
@@ -69,13 +79,20 @@ public class Flight {
 	}
 
 
-	public Date getArrDate() {
-		return arrDate;
+	public String getArrDate() {
+		String dateTime;
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm a zzz");
+		dateTime = dateFormat.format(arrDate);
+		return dateTime;
 	}
 
 
-	public void setArrDate(Date arrDate) {
-		this.arrDate = arrDate;
+	public void setArrDate(String date, String time) throws ParseException {
+		java.util.Calendar cal = java.util.Calendar.getInstance();
+		String dateTimeString = new java.text.SimpleDateFormat("EEEE, "+date+"/"+time).format(cal.getTime());
+		SimpleDateFormat formatter = new SimpleDateFormat("EEEE, dd/MM/yyyy/hh:mm:ss");
+		Date dateTime = formatter.parse(dateTimeString);
+		this.arrDate = dateTime;
 	}
 
 

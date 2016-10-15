@@ -55,7 +55,7 @@ public class Activity {
 
 	public void setActivityStartTime(String date, String time) throws ParseException {
 		java.util.Calendar cal = java.util.Calendar.getInstance();
-		String dateTimeString = new java.text.SimpleDateFormat("EEEE, "+date+time).format(cal.getTime());
+		String dateTimeString = new java.text.SimpleDateFormat("EEEE, "+date+"/"+time).format(cal.getTime());
 		SimpleDateFormat formatter = new SimpleDateFormat("EEEE, dd/MM/yyyy/hh:mm:ss");
 		Date dateTime = formatter.parse(dateTimeString);
 		this.activityStartTime = dateTime;
@@ -70,7 +70,7 @@ public class Activity {
 
 	public void setActivityEndTime(String date, String time) throws ParseException {
 		java.util.Calendar cal = java.util.Calendar.getInstance();
-		String dateTimeString = new java.text.SimpleDateFormat("EEEE, "+date+time).format(cal.getTime());
+		String dateTimeString = new java.text.SimpleDateFormat("EEEE, "+date+"/"+time).format(cal.getTime());
 		SimpleDateFormat formatter = new SimpleDateFormat("EEEE, dd/MM/yyyy/hh:mm:ss");
 		Date dateTime = formatter.parse(dateTimeString);
 		this.activityEndTime = dateTime;
