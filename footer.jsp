@@ -11,17 +11,16 @@
 <div class="container clear-top" style="box-shadow: 0px 0px 5px 2px #888888; background-color: #fff; padding: 18px">
 <form class="container-fluid text-center">
 	<div class = "col-sm-12">
-	<h6>Copyright &copy 2016 TravelPlanner</h6>
-		<div class = "col-sm-6">
-			<h6>About Us</h6>
-			<h6>Our Vision</h6>
-			<h6>History</h6>
-		</div>
-		<div class = "col-sm-6">
-			<h6>Contact Us</h6>
-			<h6>Employment Opportunities</h6>
-			<h6>Help</h6>
-		</div>
+	<h4>Copyright &copy 2016 TravelPlanner</h4>
+	</div>
+	<div class = "col-sm-12">
+	<h5>Software Engineering Practice (48440) Assignment 2</h5>
+	</div>
+	<div class = "col-sm-12">
+	<h6>SEP-Wrk-04-G3</h6>
+	</div>
+	<div class = "col-sm-12">
+	<h6>Jai Robinson, Lyndal Walker, Nguyen Duy Loc & Renwei Liu</h6>
 	</div>
 </form>
 </div>

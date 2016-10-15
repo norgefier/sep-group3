@@ -7,28 +7,22 @@
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="styleSheet.css">
 <style>
-.carousel-inner img {
-  margin: auto;
-}
-p{
-	color:white;
-}
-h3{
-	color:white;
-}
+.carousel-inner img { margin: auto; }
+p { color:white; }
+h3 { color:white; }
 </style>
 <title>TravelPlanner Home Page</title>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-
-</body>
-</html>
-
-
-
-
-
+<%if(session.getAttribute("message")!=null){%>
+<div class="alert alert-<%=session.getAttribute("messageType")%>">
+  	<%=session.getAttribute("message")%>
+</div>
+<%
+	session.removeAttribute("message");
+	session.removeAttribute("messageType");
+} %>
 <div class="container clear-top" style="box-shadow: 0px 0px 5px 2px #888888; background-color: #fff; padding: 18px">
 <%User currentUser = (User)session.getAttribute("currentUser");%>
 <div class = "row">
@@ -97,9 +91,7 @@ h3{
 </div>
 	
 </div>
-<!-- Display footer -->
 <jsp:include page="footer.jsp"/>
-<!-- All pages include jquery and minified bootstrap libraries-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>

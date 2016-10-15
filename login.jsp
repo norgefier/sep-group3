@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="database.*"%>
+    pageEncoding="UTF-8" import="models.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,10 +9,25 @@
 <title>Login</title>
 </head>
 <body>
-<!--<jsp:include page="NavBar.jsp">
-<!--	<jsp:param name="active" value="profile" />-->
-<!--</jsp:include>-->
+<jsp:include page="header.jsp"/>
+<jsp:useBean id="users" class="models.StoredUsers" scope="application" />
 <div class="container clear-top" style="box-shadow: 0px 0px 5px 2px #888888; background-color: #fff; padding: 18px">
+<% 
+if(request.getParameter("regemail") != null)
+{
+	try
+	{
+		users.newUser(request.getParameter("regemail"), request.getParameter("regpassword"), request.getParameter("regfirstName"), request.getParameter("reglastName"), request.getParameter("regmobile"));
+		session.setAttribute("message", "Registration complete. Please login.");
+		session.setAttribute("messageType", "success");
+	}
+	catch(IllegalArgumentException e)
+	{
+		session.setAttribute("message", e);
+		session.setAttribute("messageType", "danger");
+	}
+}%>
+
 <%if(session.getAttribute("message")!=null){%>
 	<div class="alert alert-<%=session.getAttribute("messageType")%>">
 	  	<%=session.getAttribute("message")%>
@@ -21,23 +36,13 @@
 		session.removeAttribute("message");
 		session.removeAttribute("messageType");
 	} %>
+	
 <ol class="breadcrumb">
 		  <li><a href="index.jsp">Home</a></li>
 		  <li class="active">Login</li>
 		</ol>
 <h1 align="center">Login</h1>
 
-<% String filePath = application.getRealPath("WEB-INF/users.xml"); %>
-<jsp:useBean id="handler" class="database.UserHandler" scope="application">
-    <jsp:setProperty name="handler" property="filePath" value="<%=filePath%>"/>
-</jsp:useBean>
-
-<% User newUser = new User(request.getParameter("firstName"), request.getParameter("lastName"), request.getParameter("email"), request.getParameter("password"));
-if(newUser.getEmail() != null){
-handler.getUsers().addUser(newUser);
-%>
-<p>Registration complete. Please login.</p>
-<%}%>
 
 <form action="profile.jsp" method="POST">
 <table align="center" cellpadding="90">
@@ -76,7 +81,7 @@ handler.getUsers().addUser(newUser);
 </table>
 </form>
 </div>
-<!--<jsp:include page="footer.jsp"/>-->
+<jsp:include page="footer.jsp"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
