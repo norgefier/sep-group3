@@ -20,7 +20,7 @@
 	<h6>SEP-Wrk-04-G3</h6>
 	</div>
 	<div class = "col-sm-12">
-	<h6>Jai Robinson, Lyndal Walker, Nguyen Duy Loc & Renwei Liu</h6>
+	<h6>Jai Robinson, Lyndal Walker, Nguyen Duy Loc and Renwei Liu</h6>
 	</div>
 </form>
 </div>
