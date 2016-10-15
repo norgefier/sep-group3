@@ -10,8 +10,11 @@ public class Accomodation {
 	private String accomAddress;
 	private String notes;
 	
-	public Accomodation()
-	{}
+	public Accomodation(String name)
+	{
+		this.accomName = name;
+		this.accomID = UUID.randomUUID();
+	}
 
 	public UUID getAccomID() {
 		return accomID;
