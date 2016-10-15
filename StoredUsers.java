@@ -15,7 +15,7 @@ public class StoredUsers {
 		boolean found = false;
 		for(int i=0; i<users.length; i++)
 		{
-			if(email.equals(users[i].getEmailAddress()) && password.equals(users[i].getPassword()))
+			if(users[i].getEmailAddress().equals(email) && users[i].getPassword().equals(password))
 			{
 				user = users[i];
 				found = true;
@@ -28,7 +28,7 @@ public class StoredUsers {
 		return user;
 	}
 	
-	public void newUser(String email, String password)
+	public void newUser(String email, String password, String firstName, String lastName, String mobileNo)
 	{
 		User user = null;
 		for(User currUser : users)
@@ -40,7 +40,7 @@ public class StoredUsers {
 		}
 		if(email.length() < 50 && password.length() < 50)
 		{
-			user = new User(email, password);
+			user = new User(email, password, firstName, lastName, mobileNo);
 			User newUsers[] = new User[users.length+1];
 			for(int i=0; i<users.length; i++)
 			{

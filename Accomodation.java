@@ -1,20 +1,23 @@
 package models;
 
+import java.util.UUID;
+
 public class Accomodation {
 
-	private int accomID;
+	private UUID accomID;
 	private Booking booking;
 	private String accomName;
+	private String accomAddress;
 	private String notes;
 	
 	public Accomodation()
 	{}
 
-	public int getAccomID() {
+	public UUID getAccomID() {
 		return accomID;
 	}
 
-	public void setAccomID(int accomID) {
+	public void setAccomID(UUID accomID) {
 		this.accomID = accomID;
 	}
 
@@ -40,6 +43,14 @@ public class Accomodation {
 
 	public void setNotes(String notes) {
 		this.notes = notes;
+	}
+
+	public String getAccomAddress() {
+		return accomAddress;
+	}
+
+	public void setAccomAddress(String accomAddress) {
+		this.accomAddress = accomAddress;
 	}
 	
 	

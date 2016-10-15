@@ -1,12 +1,14 @@
 package models;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
 public class Booking {
 
 	private UUID bookingID;
-	private UUID accomID;
 	private Accomodation accomodation;
 	private Date checkInTime;
 	private Date checkOutTime;
@@ -28,28 +30,36 @@ public class Booking {
 		this.bookingID = bookingID;
 	}
 
-	public UUID getAccomID() {
-		return accomID;
+	public String getCheckInDate() {
+		String dateTime;
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm a zzz");
+		dateTime = dateFormat.format(checkInTime);
+		return dateTime;
 	}
 
-	public void setAccomID(UUID accomID) {
-		this.accomID = accomID;
+	public void setCheckInDate(String date, String time) throws ParseException
+	{
+		java.util.Calendar cal = java.util.Calendar.getInstance();
+		String dateTimeString = new java.text.SimpleDateFormat("EEEE, "+date+time).format(cal.getTime());
+		SimpleDateFormat formatter = new SimpleDateFormat("EEEE, dd/MM/yyyy/hh:mm:ss");
+		Date dateTime = formatter.parse(dateTimeString);
+		this.checkInTime = dateTime;
 	}
 
-	public Date getCheckInTime() {
-		return checkInTime;
+	public String getCheckOutTime() {
+		String dateTime;
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm a zzz");
+		dateTime = dateFormat.format(checkOutTime);
+		return dateTime;
 	}
 
-	public void setCheckInTime(Date checkInTime) {
-		this.checkInTime = checkInTime;
-	}
-
-	public Date getCheckOutTime() {
-		return checkOutTime;
-	}
-
-	public void setCheckOutTime(Date checkOutTime) {
-		this.checkOutTime = checkOutTime;
+	public void setCheckOutDate(String date, String time) throws ParseException
+	{
+		java.util.Calendar cal = java.util.Calendar.getInstance();
+		String dateTimeString = new java.text.SimpleDateFormat("EEEE, "+date+time).format(cal.getTime());
+		SimpleDateFormat formatter = new SimpleDateFormat("EEEE, dd/MM/yyyy/hh:mm:ss");
+		Date dateTime = formatter.parse(dateTimeString);
+		this.checkOutTime = dateTime;
 	}
 
 	public double getPrice() {
@@ -80,7 +90,5 @@ public class Booking {
 	{
 		return accomodation;
 	}
-	
-	
 	
 }

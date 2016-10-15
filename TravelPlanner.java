@@ -49,9 +49,9 @@ public class TravelPlanner {
 		return user;
 	}
 	
-	public void addUser(String email, String pass)
+	public void addUser(String email, String pass, String firstName, String lastName, String mobileNo)
 	{
-		users.newUser(email, pass);
+		users.newUser(email, pass, firstName, lastName, mobileNo);
 	}
 	
 	public void updateUser(User user)

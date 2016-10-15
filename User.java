@@ -13,10 +13,13 @@ public class User {
 	private TravelPlan[] planList;
 	private boolean sysAdmin;
 	
-	public User(String inEmail, String inPass)
+	public User(String inEmail, String inPass, String firstName, String lastName, String mobileNo)
 	{
-		emailAddress = inEmail;
-		password = inPass;
+		this.emailAddress = inEmail;
+		this.password = inPass;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.mobileNo = mobileNo;
 		planList = new TravelPlan[0];
 	}
 
