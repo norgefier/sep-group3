@@ -83,7 +83,7 @@ label {
 
 	<table id="t01">
 		<tr>
-		  <th colspan="8"><img src="https://www.tripotrip.com/sutitravel_contentfiles/agent_b2c/tripotrip/images/flight-icon2.png" alt="Flight"> FLIGHT </th>
+		Â Â <th colspan="8"><img src="https://www.tripotrip.com/sutitravel_contentfiles/agent_b2c/tripotrip/images/flight-icon2.png" alt="Flight"> FLIGHT </th>
 		</tr>
 		<tr><td><b>Departure Location</b></td>
 			<td><b>Arrival Location</b></td>
@@ -156,9 +156,9 @@ function insRow()
 
 	   
 	  <table id="t01">
-	  <tr>
-	    <th colspan="8"><img src="https://aphv-a.akamaihd.net/sites/default/files/bedrooms_icon.png" alt="Accommodation"> ACCOMODATION </th>
-	  </tr>
+	Â  <tr>
+	Â Â Â  <th colspan="8"><img src="https://aphv-a.akamaihd.net/sites/default/files/bedrooms_icon.png" alt="Accommodation"> ACCOMODATION </th>
+	Â  </tr>
 	  <tr><td><b>Name</b></td>
 			<td><b>City</b></td>
 			<td><b>Address</b></td>
@@ -229,9 +229,9 @@ function insRow()
 </script>
 	  
 	  <table id="t01">
-	  <tr>
-	    <th colspan="8"><img src="http://www.endolite.com/catalogue/icons/icon-activitylevel.jpg" alt="Activity"> ACTIVITIES </th>	
-	  </tr>
+	Â  <tr>
+	Â Â Â  <th colspan="8"><img src="http://www.endolite.com/catalogue/icons/icon-activitylevel.jpg" alt="Activity"> ACTIVITIES </th>	
+	Â  </tr>
 	  <tr><td><b>Name</b></td>
 			<td><b>Address</b></td>
 			<td><b>Start Date/Time</b></td>
