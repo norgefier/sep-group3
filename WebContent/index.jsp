@@ -42,7 +42,7 @@ h3 { color:white; }
 
       <div class="item active">
       <!-- image taken from https://66.media.tumblr.com/18435dacd3a8ab8f6461305cfb53c7e6/tumblr_nbaqc8zjMy1rxwrzxo1_500.gif -->
-        <img src="lets_travel.gif" alt="world map with text lets travel">
+        <img src="img/lets_travel.gif" alt="world map with text lets travel">
         <div class="carousel-caption">
           <h3>TravelPlanner</h3>
           <p>The online trip planning website</p>
@@ -50,7 +50,7 @@ h3 { color:white; }
       </div>
 
       <div class="item">
-        <img src="hotel.jpg" alt="hotel room">
+        <img src="img/hotel.jpg" alt="hotel room">
         <!-- image taken from http://24.media.tumblr.com/8d644f50b56105ea7c73733c3e560037/tumblr_n194u8v6Cd1sjzbu2o1_500.jpg -->
         <div class="carousel-caption">
           <h3>Accommodation</h3>
@@ -59,7 +59,7 @@ h3 { color:white; }
       </div>
     
       <div class="item">
-        <img src="flights.jpg" alt="clouds out a plane window">
+        <img src="img/flights.jpg" alt="clouds out a plane window">
         <!-- image taken from http://az616578.vo.msecnd.net/files/2016/04/01/635951230043337648-217735111_Jet%20lag.jpg -->
         <div class="carousel-caption">
         <h3>Flights</h3>
@@ -68,7 +68,7 @@ h3 { color:white; }
       </div>
       
       <div class="item">
-        <img src="activity.jpg" alt="bungee jumping">
+        <img src="img/activity.jpg" alt="bungee jumping">
         <!-- image taken from https://s-media-cache-ak0.pinimg.com/originals/0a/bc/07/0abc075676f37b54e5864ee957b5fd94.jpg -->
         <div class="carousel-caption">
         <h3>Activities</h3>
