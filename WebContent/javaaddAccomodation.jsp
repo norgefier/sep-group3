@@ -45,26 +45,26 @@ label {
 	<form method="post" action="travelPlanForm.jsp">
 
 	  <table id="t01">
-	  <tr>
-	    <th colspan="3"><img src="https://aphv-a.akamaihd.net/sites/default/files/bedrooms_icon.png" alt="Accommodation"> ACCOMODATION </th>
-	  </tr>
+	Â  <tr>
+	Â Â Â  <th colspan="3"><img src="https://aphv-a.akamaihd.net/sites/default/files/bedrooms_icon.png" alt="Accommodation"> ACCOMODATION </th>
+	Â  </tr>
 	  <tr>
-	    <td colspan="3"><label>Name of Accommodation</label><br><input type="text" name="accomName"></td>
-	  </tr>	
+	Â Â Â  <td colspan="3"><label>Name of Accommodation</label><br><input type="text" name="accomName"></td>
+	Â  </tr>	
 	  <tr>
-	    <td><label>City</label><br><input type="text" name="accomCity"></td>
+	Â Â Â  <td><label>City</label><br><input type="text" name="accomCity"></td>
 		<td><label>Address</label><br><input type="text" name="accomAddress"></td>
-	  </tr>	
+	Â  </tr>	
 	  <tr>
-	    <td><label for="checkInDate">Check-In Date</label><br><input id="checkInDate" type="date" value="dd/mm/yyyy" name="checkInDate"></td>
+	Â Â Â  <td><label for="checkInDate">Check-In Date</label><br><input id="checkInDate" type="date" value="dd/mm/yyyy" name="checkInDate"></td>
 	    <td><label for="checkInTime">Check-In Time</label><br><input id="checkInTime" type="time" value="hh:mm AM" name="checkInTime"></td>
 	  </tr>
 	  <tr>
-	    <td><label for="checkOutDate">Check-Out Date</label><br><input id="checkOutDate" type="date" value="dd/mm/yyyy" name="checkOutDate"></td>
+	Â Â Â  <td><label for="checkOutDate">Check-Out Date</label><br><input id="checkOutDate" type="date" value="dd/mm/yyyy" name="checkOutDate"></td>
 	    <td><label for="checkOutTime">Check-Out Time</label><br><input id="checkOutTime" type="time" value="hh:mm AM" name="checkOutTime"></td>
 	  </tr>
 	  <tr>
-	    <td><label>Price ($AUD)</label><br><input type="text" name="accomPrice"></td>
+	Â Â Â  <td><label>Price ($AUD)</label><br><input type="text" name="accomPrice"></td>
 	    <td><label>Paid</label><br>
 	    	<select name="activityPaid">
 	    		<option value="yes">Yes</option>
