@@ -45,10 +45,10 @@ label {
 	<form method="post" action="travelPlanForm.jsp">
 
 	<table id="t01">
-	  <tr>
+	Â  <tr>
 		
-	    <th colspan="3"><img src="https://www.tripotrip.com/sutitravel_contentfiles/agent_b2c/tripotrip/images/flight-icon2.png" alt="Flight"> FLIGHT </th>
-	  </tr>
+	Â Â Â  <th colspan="3"><img src="https://www.tripotrip.com/sutitravel_contentfiles/agent_b2c/tripotrip/images/flight-icon2.png" alt="Flight"> FLIGHT </th>
+	Â  </tr>
 	  <tr>
 	    <td><label>Flight No.</label><br><input type="text" name="flightNo"></td>
 	    <td><label>Seat No.</label><br><input type="text" name="seatNo"></td>
