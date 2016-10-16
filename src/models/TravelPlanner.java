@@ -1,8 +1,10 @@
 package models;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 public class TravelPlanner {
@@ -36,6 +38,22 @@ public class TravelPlanner {
 			
 			fIn.close();
 			this.filePath = filePath;
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void save()
+	{
+		try
+		{
+			FileOutputStream fo = new FileOutputStream(filePath);
+			JAXBContext jc = JAXBContext.newInstance(StoredUsers.class);
+			Marshaller m = jc.createMarshaller();
+			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+			m.marshal(users, fo);
 		}
 		catch (Exception e)
 		{
