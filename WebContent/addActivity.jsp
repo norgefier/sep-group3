@@ -45,9 +45,9 @@ label {
 	<form method="post" action="travelPlanForm.jsp">
 
 	  <table id="t01">
-	  <tr>
-	    <th colspan="3"><img src="http://www.endolite.com/catalogue/icons/icon-activitylevel.jpg" alt="Activity"> ACTIVITIES </th>	
-	  </tr>
+	Â  <tr>
+	Â Â Â  <th colspan="3"><img src="http://www.endolite.com/catalogue/icons/icon-activitylevel.jpg" alt="Activity"> ACTIVITIES </th>	
+	Â  </tr>
 	  <tr>
 	    <td><label>Name of Activity</label><br><input type="text" name="activityName"></td>
 	  	<td><label>Address</label><br><input type="text" name="activityAddress"></td>
