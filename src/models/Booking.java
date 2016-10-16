@@ -1,20 +1,38 @@
 package models;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-public class Booking {
+import javax.xml.bind.annotation.*;
 
+@SuppressWarnings("serial")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "booking")
+public class Booking implements Serializable{
+
+	@XmlElement(name = "ID")
 	private UUID bookingID;
+	@XmlElement(name = "accomodation")
 	private Accomodation accomodation;
+	@XmlElement(name = "checkInTime")
 	private Date checkInTime;
+	@XmlElement(name = "checkOutTime")
 	private Date checkOutTime;
+	@XmlElement(name = "Price")
 	private double price;
+	@XmlElement(name = "notes")
 	private String notes;
+	@XmlElement(name = "paid")
 	private boolean paid;
+	
+	public Booking()
+	{
+		
+	}
 	
 	public Booking(Accomodation accom)
 	{

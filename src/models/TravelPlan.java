@@ -1,18 +1,37 @@
 package models;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
-public class TravelPlan {
+import javax.xml.bind.annotation.*;
 
+@SuppressWarnings("serial")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "plan")
+public class TravelPlan implements Serializable {
+	
+	@XmlElement(name = "ID")
 	private UUID planID;
+	@XmlElement(name = "name")
 	private String planName;
+	@XmlElement(name = "startDate")
 	private Date startDate;
+	@XmlElement(name = "endDate")
 	private Date endDate;
+	@XmlElement(name = "description")
 	private String description;
+	@XmlElement(name = "ticket")
 	private Ticket[] ticketList;
+	@XmlElement(name = "booking")
 	private Booking[] bookingList;
+	@XmlElement(name = "activity")
 	private Activity[] activityList;
+	
+	public TravelPlan()
+	{
+		
+	}
 	
 	public TravelPlan(String name)
 	{

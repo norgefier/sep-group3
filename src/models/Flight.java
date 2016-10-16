@@ -1,17 +1,30 @@
 package models;
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class Flight {
+import javax.xml.bind.annotation.*;
 
+@SuppressWarnings("serial")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "flight")
+public class Flight implements Serializable {
+	
+	@XmlElement(name = "ID")
 	private UUID flightID;
+	@XmlElement(name = "flightNo")
 	private String flightNo;
+	@XmlElement(name = "airline")
 	private String airline;
+	@XmlElement(name = "depDate")
 	private Date depDate;
+	@XmlElement(name = "depLLoc")
 	private String depLoc;
+	@XmlElement(name = "arrDate")
 	private Date arrDate;
+	@XmlElement(name = "arrLoc")
 	private String arrLoc;
 	
 	

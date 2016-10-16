@@ -1,13 +1,28 @@
 package models;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Ticket {
+import javax.xml.bind.annotation.*;
 
+@SuppressWarnings("serial")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "ticket")
+public class Ticket implements Serializable {
+
+	@XmlElement(name = "ID")
 	private UUID ticketID;
+	@XmlElement(name = "flight")
 	private Flight flight;
+	@XmlElement(name = "seatNo")
 	private String seatNo;
+	@XmlElement(name = "notes")
 	private String notes;
+	
+	public Ticket()
+	{
+		
+	}
 	
 	public Ticket(Flight flight)
 	{

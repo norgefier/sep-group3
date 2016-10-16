@@ -1,17 +1,35 @@
 package models;
 
+import java.io.Serializable;
 import java.util.UUID;
+import javax.xml.bind.annotation.*;
 
-public class User {
-
+@SuppressWarnings("serial")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "creator")
+public class User implements Serializable {
+	
+	@XmlElement(name = "email")
 	private String emailAddress;
+	@XmlElement(name = "password")
 	private String password;
+	@XmlElement(name = "firstName")
 	private String firstName;
+	@XmlElement(name = "lastName")
 	private String lastName;
+	@XmlElement(name = "screenName")
 	private String screenName;
+	@XmlElement(name = "mobileNo")
 	private String mobileNo;
+	@XmlElement(name = "plan")
 	private TravelPlan[] planList;
+	@XmlElement(name = "sysAdmin")
 	private boolean sysAdmin;
+	
+	public User()
+	{
+		
+	}
 	
 	public User(String inEmail, String inPass, String firstName, String lastName, String mobileNo)
 	{

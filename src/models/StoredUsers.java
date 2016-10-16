@@ -1,7 +1,15 @@
 package models;
 
-public class StoredUsers {
+import java.io.Serializable;
 
+import javax.xml.bind.annotation.*;
+
+@SuppressWarnings("serial")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "users")
+public class StoredUsers implements Serializable {
+	
+	@XmlElement(name = "user")
 	private User[] users;
 	
 	public StoredUsers()
@@ -57,16 +65,18 @@ public class StoredUsers {
 	
 	public void updateUser(User user)
 	{
+		boolean success = false;
 		for(int i=0; i<users.length; i++)
 		{
 			if(users[i].getEmailAddress() == user.getEmailAddress())
 			{
 				users[i] = user;
+				success = true;
 			}
-			else
-			{
-				throw new IllegalArgumentException("user does not exist "+user.getFirstName()+" "+user.getLastName());
-			}
+		}
+		if(!success)
+		{
+			throw new IllegalArgumentException("user does not exist "+user.getFirstName()+" "+user.getLastName());
 		}
 	}
 	
