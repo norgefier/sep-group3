@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
 <h1></h1>
@@ -20,16 +20,11 @@
 	<h6>SEP-Wrk-04-G3</h6>
 	</div>
 	<div class = "col-sm-12">
-	<h6>Jai Robinson, Lyndal Walker, Nguyen Duy Loc and Renwei Liu</h6>
+	<h6>Jai Robinson, Lyndal Walker, Nguyen Duy Loc & Renwei Liu</h6>
 	</div>
 </form>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
