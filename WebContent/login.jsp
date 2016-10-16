@@ -10,14 +10,19 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<jsp:useBean id="users" class="models.StoredUsers" scope="application" />
+
+<% String filePath = application.getRealPath("WEB-INF/users.xml"); %>
+<jsp:useBean id="users" class="models.TravelPlanner" scope="application">
+    <jsp:setProperty name="users" property="filePath" value="<%=filePath%>"/>
+</jsp:useBean>
+
 <div class="container clear-top" style="box-shadow: 0px 0px 5px 2px #888888; background-color: #fff; padding: 18px">
 <% 
 if(request.getParameter("regemail") != null)
 {
 	try
 	{
-		users.newUser(request.getParameter("regemail"), request.getParameter("regpassword"), request.getParameter("regfirstName"), request.getParameter("reglastName"), request.getParameter("regmobile"));
+		users.addUser(request.getParameter("regemail"), request.getParameter("regpassword"), request.getParameter("regfirstName"), request.getParameter("reglastName"), request.getParameter("regmobile"));
 		session.setAttribute("message", "Registration complete. Please login.");
 		session.setAttribute("messageType", "success");
 	}

@@ -9,8 +9,13 @@
 <title>Profile</title>
 </head>
 <body>
-<jsp:useBean id="users" class="models.StoredUsers" scope="application" />
 <jsp:include page="header.jsp"/>
+
+<% String filePath = application.getRealPath("WEB-INF/users.xml"); %>
+<jsp:useBean id="users" class="models.TravelPlanner" scope="application">
+    <jsp:setProperty name="users" property="filePath" value="<%=filePath%>"/>
+</jsp:useBean>
+
 <%	User currentUser = (User) session.getAttribute("currentUser");
 	if (currentUser == null)
 	{
