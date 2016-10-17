@@ -1,13 +1,11 @@
 package models;
 
-import java.io.Serializable;
 import java.util.UUID;
 import javax.xml.bind.annotation.*;
 
-@SuppressWarnings("serial")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "creator")
-public class User implements Serializable {
+public class User {
 	
 	@XmlElement(name = "email")
 	private String emailAddress;
@@ -105,22 +103,42 @@ public class User implements Serializable {
 		this.sysAdmin = sysAdmin;
 	}
 	
-	public void addPlan(TravelPlan plan)
+	public boolean planExists(TravelPlan plan)
 	{
-		TravelPlan newList[] = new TravelPlan[planList.length+1];
-		for(int i=0; i<planList.length; i++)
+		boolean exists = false;
+		for(int i = 0; i < planList.length; i++)
 		{
-			newList[i] = planList[i];
+			if(plan.getPlanID() == planList[i].getPlanID())
+			{
+				exists = true;
+			}
 		}
-		newList[planList.length] = plan;
-		planList = newList;
+		return exists;
 	}
 	
-	public void updatePlan(UUID planID, TravelPlan plan)
+	public void addPlan(TravelPlan plan)
+	{
+		if(planExists(plan))
+		{
+			updatePlan(plan);
+		}
+		else
+		{
+			TravelPlan newList[] = new TravelPlan[planList.length+1];
+			for(int i=0; i<planList.length; i++)
+			{
+				newList[i] = planList[i];
+			}
+			newList[planList.length] = plan;
+			planList = newList;
+		}
+	}
+	
+	public void updatePlan(TravelPlan plan)
 	{
 		for(int i=0; i<planList.length; i++)
 		{
-			if(planList[i].getPlanID() == planID)
+			if(planList[i].getPlanID() == plan.getPlanID())
 			{
 				planList[i] = plan;
 			}
