@@ -1,17 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import = "models.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <style>
 input[type=button] {color:black; background-color:lightgrey}
 input[type=submit] {color:black; background-color:lightgrey}
-</style>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<%String path = request.getContextPath(); %>
-<title>Travel Plan</title>
-<style>
-
 table {
 	width:50%;
 }
@@ -37,18 +32,22 @@ table#t01 th {
 label {
 	font-weight: bold;
 }
-
 </style>
+
+<%String path = request.getContextPath(); %>
+
+<title>Travel Planner - Add Flight</title>
+
 </head>
 <body>
 	<h1>Add Flight</h1>
 	<form method="post" action="travelPlanForm.jsp">
 
 	<table id="t01">
-	Â  <tr>
+	  <tr>
 		
-	Â Â Â  <th colspan="3"><img src="https://www.tripotrip.com/sutitravel_contentfiles/agent_b2c/tripotrip/images/flight-icon2.png" alt="Flight"> FLIGHT </th>
-	Â  </tr>
+	    <th colspan="3"><img src="https://www.tripotrip.com/sutitravel_contentfiles/agent_b2c/tripotrip/images/flight-icon2.png" alt="Flight"> FLIGHT </th>
+	  </tr>
 	  <tr>
 	    <td><label>Flight No.</label><br><input type="text" name="flightNo"></td>
 	    <td><label>Seat No.</label><br><input type="text" name="seatNo"></td>

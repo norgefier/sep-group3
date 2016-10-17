@@ -1,17 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import = "models.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <style>
 input[type=button] {color:black; background-color:lightgrey}
 input[type=submit] {color:black; background-color:lightgrey}
-</style>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<%String path = request.getContextPath(); %>
-<title>Travel Plan</title>
-<style>
-
 table {
 	width:50%;
 }
@@ -37,17 +32,21 @@ table#t01 th {
 label {
 	font-weight: bold;
 }
-
 </style>
+
+<%String path = request.getContextPath();
+%>
+
+<title>Travel Planner - Add Activity</title>
 </head>
 <body>
 	<h1>Add Activity</h1>
 	<form method="post" action="travelPlanForm.jsp">
 
 	  <table id="t01">
-	Â  <tr>
-	Â Â Â  <th colspan="3"><img src="http://www.endolite.com/catalogue/icons/icon-activitylevel.jpg" alt="Activity"> ACTIVITIES </th>	
-	Â  </tr>
+	  <tr>
+	    <th colspan="3"><img src="http://www.endolite.com/catalogue/icons/icon-activitylevel.jpg" alt="Activity"> ACTIVITIES </th>	
+	  </tr>
 	  <tr>
 	    <td><label>Name of Activity</label><br><input type="text" name="activityName"></td>
 	  	<td><label>Address</label><br><input type="text" name="activityAddress"></td>

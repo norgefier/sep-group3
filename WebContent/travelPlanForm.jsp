@@ -1,41 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="modelTests.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style>
 input[type=button] {color:black; background-color:lightgrey}
 input[type=submit] {color:black; background-color:lightgrey}
-</style>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<%String path = request.getContextPath(); 
-String depLoc = (String) request.getParameter("depLoc");
-String arrLoc = (String) request.getParameter("arrLoc");
-String depDate = (String) request.getParameter("depDate");
-String depTime = (String) request.getParameter("depTime");
-String flightNo = (String) request.getParameter("flightNo");
-String seatNo = (String) request.getParameter("seatNo");
-
-String accomName = (String) request.getParameter("accomName");
-String accomCity = (String) request.getParameter("accomCity");
-String accomAddress = (String) request.getParameter("accomAddress");
-String checkInDate = (String) request.getParameter("checkInDate");
-String checkInTime = (String) request.getParameter("checkInTime");
-String checkOutDate = (String) request.getParameter("checkOutDate");
-String checkOutTime = (String) request.getParameter("checkOutTime");
-
-String activityName = (String) request.getParameter("activityName");
-String activityAddress = (String) request.getParameter("activityAddress");
-String activityStartDate = (String) request.getParameter("activityStartDate");
-String activityStartTime = (String) request.getParameter("activityStartTime");
-String activityEndDate = (String) request.getParameter("activityEndDate");
-String activityEndTime = (String) request.getParameter("activityEndTime");
-String activityPrice = (String) request.getParameter("activityPrice");
-
-%>
-<title>Travel Plan</title>
-<style>
-
 table {
 	width:50%;
 }
@@ -61,12 +32,47 @@ table#t01 th {
 label {
 	font-weight: bold;
 }
-
 </style>
+
+<% String filePath = application.getRealPath("WEB-INF/users.xml");
+
+String emailOne = "jai-robinson@hotmail.com";
+String passOne = "jai1234";
+String planName = "Japan2017";
+String first = "jai";
+String last = "robinson";
+String no = "0498127843";
+
+String depLoc = (String) request.getParameter("depLoc");
+String arrLoc = (String) request.getParameter("arrLoc");
+String depDate = (String) request.getParameter("depDate");
+String depTime = (String) request.getParameter("depTime");
+String flightNo = (String) request.getParameter("flightNo");
+String seatNo = (String) request.getParameter("seatNo");
+
+String accomName = (String) request.getParameter("accomName");
+String accomCity = (String) request.getParameter("accomCity");
+String accomAddress = (String) request.getParameter("accomAddress");
+String checkInDate = (String) request.getParameter("checkInDate");
+String checkInTime = (String) request.getParameter("checkInTime");
+String checkOutDate = (String) request.getParameter("checkOutDate");
+String checkOutTime = (String) request.getParameter("checkOutTime");
+
+String activityName = (String) request.getParameter("activityName");
+String activityAddress = (String) request.getParameter("activityAddress");
+String activityStartDate = (String) request.getParameter("activityStartDate");
+String activityStartTime = (String) request.getParameter("activityStartTime");
+String activityEndDate = (String) request.getParameter("activityEndDate");
+String activityEndTime = (String) request.getParameter("activityEndTime");
+String activityPrice = (String) request.getParameter("activityPrice");
+%>
+
+<title>Travel Planner - Main Travel Plan Form</title>
 </head>
 <body>
+
 	<h1>Travel Plan</h1>
-	<form method="post" action="welcome.jsp">
+	<form method="post" action="Profile.jsp">
 
 	<tr>
 	<td><label>Plan Name </label><input id="planName" type="text"></td>
@@ -80,7 +86,7 @@ label {
 	<!-- Date and Time just apply for Chrome 20 & Opera 11-->
 	</tr>
 	<br>
-
+	
 	<table id="t01">
 		<tr>
 		  <th colspan="8"><img src="https://www.tripotrip.com/sutitravel_contentfiles/agent_b2c/tripotrip/images/flight-icon2.png" alt="Flight"> FLIGHT </th>
@@ -104,16 +110,14 @@ label {
 	   <br>
 		</tr>	
 		<tr><td><input type="button" value="Add Flight" onclick="parent.location='addFlight.jsp'"></td></tr>
-		<br>
-		
+	   <br>
+	   
 <script language="JavaScript">
 var count=0;
-
 function deleteRow(row){
 	var i=row.parentNode.parentNode.rowIndex;
 	document.getElementById("t01").deleteRow(i);
 }
-
 function insRow()
 {
 	var table=document.getElementById('t01');
@@ -154,7 +158,6 @@ function insRow()
 }
 </script>
 
-	   
 	  <table id="t01">
 	  <tr>
 	    <th colspan="8"><img src="https://aphv-a.akamaihd.net/sites/default/files/bedrooms_icon.png" alt="Accommodation"> ACCOMODATION </th>
@@ -182,12 +185,10 @@ function insRow()
 		
 <script language="JavaScript">
 var count=0;
-
 function deleteRow(row){
 	var i=row.parentNode.parentNode.rowIndex;
 	document.getElementById("t01").deleteRow(i);
 }
-
 function insRow()
 {
 	var table=document.getElementById('t01');
@@ -227,7 +228,8 @@ function insRow()
 	del.appendChild(delButt);
 }
 </script>
-	  
+
+	
 	  <table id="t01">
 	  <tr>
 	    <th colspan="8"><img src="http://www.endolite.com/catalogue/icons/icon-activitylevel.jpg" alt="Activity"> ACTIVITIES </th>	
@@ -255,12 +257,10 @@ function insRow()
 		
 <script language="JavaScript">
 var count=0;
-
 function deleteRow(row){
 	var i=row.parentNode.parentNode.rowIndex;
 	document.getElementById("t01").deleteRow(i);
 }
-
 function insRow()
 {
 	var table=document.getElementById('t01');
@@ -298,13 +298,14 @@ function insRow()
 	delButt.type = "button";
 	delButt.value = "Delete";
 	del.appendChild(delButt);
-
 }
 </script>
-
+		
 	<br>
 	<input type="button" value="Save" onclick="parent.location='profile.jsp'">
 	<input type="button" value="Cancel" onclick="parent.location='profile.jsp'">
 	</form>
+
+
 </body>
 </html>

@@ -1,17 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import = "models.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <style>
 input[type=button] {color:black; background-color:lightgrey}
 input[type=submit] {color:black; background-color:lightgrey}
-</style>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<%String path = request.getContextPath(); %>
-<title>Travel Plan</title>
-<style>
-
 table {
 	width:50%;
 }
@@ -37,34 +32,37 @@ table#t01 th {
 label {
 	font-weight: bold;
 }
-
 </style>
+
+<%String path = request.getContextPath(); %>
+
+<title>Travel Planner - Add Accomodation</title>
 </head>
 <body>
 	<h1>Add Accomodation</h1>
 	<form method="post" action="travelPlanForm.jsp">
 
 	  <table id="t01">
-	Â  <tr>
-	Â Â Â  <th colspan="3"><img src="https://aphv-a.akamaihd.net/sites/default/files/bedrooms_icon.png" alt="Accommodation"> ACCOMODATION </th>
-	Â  </tr>
+	  <tr>
+	    <th colspan="3"><img src="https://aphv-a.akamaihd.net/sites/default/files/bedrooms_icon.png" alt="Accommodation"> ACCOMODATION </th>
+	  </tr>
 	  <tr>
-	Â Â Â  <td colspan="3"><label>Name of Accommodation</label><br><input type="text" name="accomName"></td>
-	Â  </tr>	
+	    <td colspan="3"><label>Name of Accommodation</label><br><input type="text" name="accomName"></td>
+	  </tr>	
 	  <tr>
-	Â Â Â  <td><label>City</label><br><input type="text" name="accomCity"></td>
+	    <td><label>City</label><br><input type="text" name="accomCity"></td>
 		<td><label>Address</label><br><input type="text" name="accomAddress"></td>
-	Â  </tr>	
+	  </tr>	
 	  <tr>
-	Â Â Â  <td><label for="checkInDate">Check-In Date</label><br><input id="checkInDate" type="date" value="dd/mm/yyyy" name="checkInDate"></td>
+	    <td><label for="checkInDate">Check-In Date</label><br><input id="checkInDate" type="date" value="dd/mm/yyyy" name="checkInDate"></td>
 	    <td><label for="checkInTime">Check-In Time</label><br><input id="checkInTime" type="time" value="hh:mm AM" name="checkInTime"></td>
 	  </tr>
 	  <tr>
-	Â Â Â  <td><label for="checkOutDate">Check-Out Date</label><br><input id="checkOutDate" type="date" value="dd/mm/yyyy" name="checkOutDate"></td>
+	    <td><label for="checkOutDate">Check-Out Date</label><br><input id="checkOutDate" type="date" value="dd/mm/yyyy" name="checkOutDate"></td>
 	    <td><label for="checkOutTime">Check-Out Time</label><br><input id="checkOutTime" type="time" value="hh:mm AM" name="checkOutTime"></td>
 	  </tr>
 	  <tr>
-	Â Â Â  <td><label>Price ($AUD)</label><br><input type="text" name="accomPrice"></td>
+	    <td><label>Price ($AUD)</label><br><input type="text" name="accomPrice"></td>
 	    <td><label>Paid</label><br>
 	    	<select name="activityPaid">
 	    		<option value="yes">Yes</option>
