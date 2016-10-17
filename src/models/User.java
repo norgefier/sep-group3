@@ -145,6 +145,26 @@ public class User {
 		}
 	}
 	
+	public void deletePlan(TravelPlan plan)
+	{
+		TravelPlan[] newPlanList = new TravelPlan[planList.length-1];
+		for(int i = 0; i < planList.length; i++)
+		{
+			if(planList[i] != null && planList[i].getPlanID().equals(plan.getPlanID()))
+			{
+				for(int n = 0; n < i; n++)
+				{
+					newPlanList[n] = planList[n];
+				}
+				for(int n = i; n < newPlanList.length; n++)
+				{
+					newPlanList[i] = planList[n+1];
+				}
+				planList = newPlanList;
+			}
+		}
+	}
+	
 	public TravelPlan getPlan(UUID ID)
 	{
 		TravelPlan retPlan = null;

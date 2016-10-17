@@ -80,6 +80,26 @@ public class StoredUsers implements Serializable {
 		}
 	}
 	
+	public void deleteUser(String email)
+	{
+		User[] newUsers = new User[users.length-1];
+		for(int i = 0; i < users.length; i++)
+		{
+			if(users[i] != null && users[i].getEmailAddress().equals(email))
+			{
+				for(int n = 0; n < i; n++)
+				{
+					newUsers[n] = users[n];
+				}
+				for(int n = i; n < newUsers.length; n++)
+				{
+					newUsers[i] = users[n+1];
+				}
+				users = newUsers;
+			}
+		}
+	}
+	
 	public User[] getUsers() {
 		return users;
 	}

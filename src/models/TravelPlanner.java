@@ -82,8 +82,8 @@ public class TravelPlanner {
 		return users.getUsers();
 	}
 	
-	public void passReset(String email)
+	public StoredUsers getStoredUsers()
 	{
-		
+		return users;
 	}
 }
