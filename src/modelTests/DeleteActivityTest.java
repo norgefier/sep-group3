@@ -56,7 +56,7 @@ public class DeleteActivityTest {
 		plan.delActivity(actOne.getActivityID());
 		
 		//update the user
-		user.updatePlan(plan.getPlanID(), plan);
+		user.updatePlan(plan);
 		
 		//update the planner
 		planner.updateUser(user);

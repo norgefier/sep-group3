@@ -48,7 +48,7 @@ public class UpdateTravelPlanTest {
 		plan.addActivity(act);
 		
 		//updates the plan in the user object
-		loggedUser.updatePlan(plan.getPlanID(), plan);
+		loggedUser.updatePlan(plan);
 		
 		//updates the users information in the application object
 		planner.updateUser(loggedUser);

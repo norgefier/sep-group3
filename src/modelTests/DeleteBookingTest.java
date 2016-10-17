@@ -68,7 +68,7 @@ public class DeleteBookingTest {
 		plan.delBooking(bookingOne.getBookingID());
 		
 		//update the user
-		user.updatePlan(plan.getPlanID(), plan);
+		user.updatePlan(plan);
 		
 		//update the planner
 		planner.updateUser(user);

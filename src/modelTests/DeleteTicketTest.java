@@ -64,7 +64,7 @@ public class DeleteTicketTest {
 		plan.delTicket(ticketOne.getTicketID());
 		
 		//update the user
-		user.updatePlan(plan.getPlanID(), plan);
+		user.updatePlan(plan);
 		
 		//update the applciaiton object
 		planner.updateUser(user);
