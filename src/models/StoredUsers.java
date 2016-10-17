@@ -93,7 +93,7 @@ public class StoredUsers implements Serializable {
 				}
 				for(int n = i; n < newUsers.length; n++)
 				{
-					newUsers[i] = users[n+1];
+					newUsers[n] = users[n+1];
 				}
 				users = newUsers;
 			}
